@@ -53,6 +53,8 @@ setFormData({
 }
 const handleEdit=(e)=>{
 e.preventDefault();
+if(FormData.body==null && FormData.title==null)
+  return alert('enter form details which you want to add or edit')
 setisEditClick(false)
  if(!editId) return;
     else{
