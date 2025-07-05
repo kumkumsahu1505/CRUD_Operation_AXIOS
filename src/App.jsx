@@ -26,13 +26,13 @@ function App() {
 //add post in axios
 const handleSubmit =async(e)=>{
   e.preventDefault();
-  if(FormData.body==null && FormData.title==null)
-    return alert('enter form details which you want to add or edit')
     //  const response = createPost(formData);
       const newPostData ={
          ...formData,
       id:post.length+1
     }
+    if(newPostData.body=="" && newPostData.title=="")
+        return alert('enter form details which you want to add or edit')
     setPost((pre)=>([...pre,newPostData]))
     setFormData({body:'',title:""})
 }
